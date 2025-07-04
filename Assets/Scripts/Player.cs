@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public string PlayerName;
     public float PlayerMoney;
     public bool isPlayerHaveType;
+    public string Token;
 
     private void Awake()
     {
