@@ -12,7 +12,7 @@ public class BaseBall : MonoBehaviour
     protected Rigidbody rb;
 
     public bool IsMoving = false;
-    private float stopThreshold = 0.25f;
+    private float stopThreshold = 0.55f;
 
 
 

@@ -1,0 +1,4 @@
+repository "8BB-Game/8BB-Game@2474879043432@cloud"
+  path "/"
+    br "/main"
+    co "/main"
