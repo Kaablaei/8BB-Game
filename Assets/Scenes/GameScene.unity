@@ -1364,10 +1364,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerType: 0
-  PlayerName: 
-  PlayerMoney: 0
+  myName: aLI
+  myOpponentname: 
+  myBalance: 0
   isPlayerHaveType: 0
   Token: 
+  Gamebanamce: 
 --- !u!4 &290107588
 Transform:
   m_ObjectHideFlags: 0
@@ -4774,6 +4776,10 @@ PrefabInstance:
     - target: {fileID: 3427129741151355770, guid: 4414f487f8ee25549ad6e334edc76ae0, type: 3}
       propertyPath: m_CollisionDetection
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539418387071755765, guid: 4414f487f8ee25549ad6e334edc76ae0, type: 3}
+      propertyPath: sceneViewId
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9076522683660886259, guid: 4414f487f8ee25549ad6e334edc76ae0, type: 3}

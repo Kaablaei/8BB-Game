@@ -5,26 +5,29 @@ public class Player : MonoBehaviour
     public static Player Instance { get; private set; } 
 
     public PlayerType playerType;
-    public string PlayerName;
-    public float PlayerMoney;
+    public string myName = "aLI";
+    public string myOpponentname;
+
+    public float myBalance;
+
     public bool isPlayerHaveType;
+
     public string Token;
+
+    public string Gamebanamce;
+
 
     private void Awake()
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(this.gameObject);
-            return;
+            Destroy(gameObject);
         }
-        Instance = this;
-        DontDestroyOnLoad(this.gameObject);
-    }
-
-    void Start()
-    {
-        playerType = PlayerType.None;
-        isPlayerHaveType = false;   
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 }
 
