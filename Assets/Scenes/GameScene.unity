@@ -262,6 +262,7 @@ MonoBehaviour:
   ballManager: {fileID: 1578384345}
   leftGreenTimer: {fileID: 1764343313}
   rhightGreenTimer: {fileID: 23932568}
+  duration: 60
 --- !u!4 &24048327
 Transform:
   m_ObjectHideFlags: 0

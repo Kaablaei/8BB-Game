@@ -13,6 +13,8 @@ public class Referee : MonoBehaviour
     //
     [SerializeField] private Image leftGreenTimer;
     [SerializeField] private Image rhightGreenTimer;
+    public float duration = 20f;
+    private float timer;
     //
 
     private int firstBallHit = -1;
@@ -26,6 +28,7 @@ public class Referee : MonoBehaviour
     private int solidBalls = 7;
     private int stripBalls = 7;
     private bool PlayerLose = false;
+    private bool timerRuning = true;
 
     void Start()
     {
@@ -34,6 +37,31 @@ public class Referee : MonoBehaviour
         ballManager.onAllBallsStoped += BallManager_onAllBallsStoped;
         ballManager.OnBallPoted += BallManager_OnBallPoted;
         shotpower.OnShot += Shotpower_OnShot;
+
+        ResrtTimerts();
+    }
+
+    private void Update()
+    {
+
+        if (timerRuning)
+        {
+            if (timer > 0f)
+            {
+                timer -= Time.deltaTime;
+                leftGreenTimer.fillAmount = timer / duration;
+            }
+            else
+            {
+                leftGreenTimer.fillAmount = 0f;
+                print("Change Turn");
+                timerRuning = false;
+
+            }
+
+        }
+         
+
     }
 
     private void Shotpower_OnShot(object sender, ShotPower.Shotinfo e)
@@ -41,6 +69,7 @@ public class Referee : MonoBehaviour
         print("Shotpower_OnShot");
         firstBallHit = -1;
         isWhiteBallPoted = false;
+        timerRuning = false ;
         Potedball.Clear();
     }
 
@@ -209,6 +238,9 @@ public class Referee : MonoBehaviour
     {
         print("BallManager_onAllBallsStoped");
 
+        ResrtTimerts();
+        timerRuning = true;
+
         if (PlayerLose)
         {
             print("PlayerLose");
@@ -248,4 +280,12 @@ public class Referee : MonoBehaviour
         isWhiteBallPoted = true;
     }
 
+
+    private void ResrtTimerts()
+    {
+        timer = duration;
+        leftGreenTimer.fillAmount = 1f;
+        rhightGreenTimer.fillAmount = 1f;
+
+    }
 }
